@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>fess-crawler-webdriver</artifactId>
   <packaging>jar</packaging>
-  <name>Fess Crawler Web Driver</name>
+  <name>${project.artifactId}</name>
   <description>This is a library for Web Driver.</description>
   <parent>
     <groupId>org.codelibs.fess</groupId>
@@ -97,6 +97,7 @@
       <artifactId>selenium-java</artifactId>  
       <version>3.141.59</version>  
       </dependency>  
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

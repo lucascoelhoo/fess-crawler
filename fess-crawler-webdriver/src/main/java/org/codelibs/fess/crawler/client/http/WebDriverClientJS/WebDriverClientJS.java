@@ -38,7 +38,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class WebDriverClientJS {
 
-    public String getTextWebPage (final String baseUrl, final String driverPath){  
+    public Object getTextWebPage (final String baseUrl, final String driverPath){  
 
         // public static String baseUrl = "https://agrows-portal-r3.labbs.com.br/documentacao/comecar";  
         // static String driverPath = "/Users/lucasdealmeida/Documents/projects/fess-bb/chrome-webdriver/chromedriver";    
@@ -66,6 +66,7 @@ public class WebDriverClientJS {
     
     
         driver.get(baseUrl);  
+
         // get the current URL of the page  
         // String URL= driver.getCurrentUrl();  
         // System.out.println(URL);  
@@ -77,12 +78,16 @@ public class WebDriverClientJS {
         // System.out.println("\n\n"); 
     
         //  System.out.println(driver.getPageSource());  
-    
-        return  (
-                driver.getCurrentUrl().toString()+"\n"
-                +driver.getTitle().toString()+"\n"
-                +driver.findElement(By.tagName("body")).getText().toString()
-                );  
+
+        final String readableBody = new String((
+                                                driver.getCurrentUrl().toString()+"\n"
+                                                +driver.getTitle().toString()+"\n"
+                                                +driver.findElement(By.tagName("body")).getText().toString()
+                                                ));
+        
+        driver.quit();
+
+        return  readableBody;  
     
     }    
 
